@@ -2,9 +2,9 @@ import requests
 from datetime import datetime
 
 today = datetime(year=2024, month=10, day=12)
-USER_NAME = "wasi25"
-TOKEN = "cfhlsrdijghoiserhtiu"
-pixela_endpoint = "https://pixe.la/v1/users"
+USER_NAME = "<YOUR PIXELA USERNAME>"
+TOKEN = "<YOUR PIXELA TOKEN>"
+pixela_endpoint = "<PIXELA ENDPOINT>"
 
 user_params = {
     "token": TOKEN,
@@ -12,9 +12,6 @@ user_params = {
     "agreeTermsOfService": "yes",
     "notMinor": "yes",
 }
-
-# response = requests.post(url=pixela_endpoint, json=user_params)
-# print(response.text)
 
 graph_endpoint = f"{pixela_endpoint}/{USER_NAME}/graphs"
 
@@ -28,9 +25,6 @@ graph_config = {
 headers = {
     "X-USER-TOKEN": TOKEN
 }
-
-# response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-# print(response.text)
 
 pixel_endpoint = f"{pixela_endpoint}/{USER_NAME}/graphs/graph1"
 
@@ -48,8 +42,6 @@ update_config = {
     "quantity": "30"
 }
 
-# response2 = requests.put(url=update_endpoint, json=update_config, headers=headers)
-# print(response2.text)
 
 delete_endpoint = f"{pixela_endpoint}/{USER_NAME}/graphs/graph1/{today.strftime('%Y%m%d')}"
 
